@@ -1,10 +1,10 @@
 import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextThemes {
-  static final Color ndGold = Color.fromRGBO(220, 180, 57, 1.0);
-  static final Color ndBlue = Color.fromRGBO(2, 43, 91, 1.0);
+
 
   static const TextStyle whiteMedium = TextStyle(
     fontFamily: "Solway",
@@ -16,7 +16,22 @@ class TextThemes {
     fontSize: 13,
     color: Color.fromRGBO(255, 255, 255, 1.0),
   );
+  static const TextStyle RedHeading = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 20,
+    fontWeight: FontWeight.w900,
+    color: AppColors.kRedColor,
+  );
+  static const TextStyle RedHeadingTextfild = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 16,
+    fontWeight: FontWeight.w900,
+    color: AppColors.kRedColor,
+  );
 
+
+  static final Color ndGold = Color.fromRGBO(220, 180, 57, 1.0);
+  static final Color ndBlue = Color.fromRGBO(2, 43, 91, 1.0);
   static final TextStyle blueTextFieldMedium = GoogleFonts.poppins(
     fontWeight: FontWeight.bold,
     fontSize: 14,

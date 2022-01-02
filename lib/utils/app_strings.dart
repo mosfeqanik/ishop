@@ -27,6 +27,8 @@ class AppStrings {
   static const String EMAIL = "Email";
   static const String NAME = "Name";
   static const String PASSWORD = "Password";
+  static const String RE_TYPEPASSWORD = "Re-type password";
+
 
   //Validation Related
   static const String PLEASE_ENTER_YOUR_EMAIL = "Please Enter Your Email";
@@ -45,6 +47,9 @@ class AppStrings {
 
   static const String version = "v 1.0.1";
   static const String COMPANYNAME = "© ITZone 2021";
+  static const String JOIN_ACTIVE_ECOMMERCE = 'Join Active eCommerce';
+
+  static const String TEXTFIELD_HEADER_NAME = 'Name';
 
 
 

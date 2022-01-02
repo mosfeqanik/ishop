@@ -3,15 +3,17 @@ import 'package:meta/meta.dart';
 // Validates password format
 
 // Validates email format
-  bool isEmailFormatValid(String value) {
-    String p =
-        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-    RegExp regExp = new RegExp(p);
-    if (!regExp.hasMatch(value) || value == null)
-      return true;
-    else
-      return false;
+String validateEmail(String value) {
+  String _msg;
+  RegExp regex = new RegExp(
+      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');
+  if (value.isEmpty) {
+    _msg = "Your username is required";
+  } else if (!regex.hasMatch(value)) {
+    _msg = "Please provide a valid emal address";
   }
+  return _msg;
+}
 
 // Validates name format
 bool isNameFormatValid(String name) {
@@ -28,17 +30,17 @@ bool isNameFormatValid(String name) {
 
 
 
-// Validates email field
-  String emailValidator({
-    @required String email,
-  }) {
-    if (email.trim().isEmpty) {
-      return 'Please enter an email address.';
-    } else if (!isEmailFormatValid(email.trim())) {
-      return 'Please enter a valid email address.';
-    }
-    return null;
-  }
+// // Validates email field
+//   String emailValidator({
+//     @required String email,
+//   }) {
+//     if (email.trim().isEmpty) {
+//       return 'Please enter an email address.';
+//     } else if (!isEmailFormatValid(email.trim())) {
+//       return 'Please enter a valid email address.';
+//     }
+//     return null;
+//   }
 
 // Validates phone number field
   String phoneNumberValidator({@required String phoneNumber}) {
