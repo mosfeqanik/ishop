@@ -8,7 +8,12 @@ class TextThemes {
 
   static const TextStyle whiteMedium = TextStyle(
     fontFamily: "Solway",
-    fontSize: 22,
+    fontSize: 15,
+    color: Color.fromRGBO(255, 255, 255, 1.0),
+  );
+  static const TextStyle whiteSmall = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 13,
     color: Color.fromRGBO(255, 255, 255, 1.0),
   );
 

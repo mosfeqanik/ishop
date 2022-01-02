@@ -12,11 +12,11 @@ class ProjectIshop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashPage(title: 'Flutter Demo Home Page'),
+      home:  SplashPage(),
     );
   }
 }

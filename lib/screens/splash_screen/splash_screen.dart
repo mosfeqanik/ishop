@@ -1,20 +1,28 @@
+import 'dart:async';
+
+import 'package:ecommerce1_project/screens/login_page/login_page.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:ecommerce1_project/utils/app_strings.dart';
-import 'package:ecommerce1_project/utils/img_network_assets_strings.dart';
+import 'package:ecommerce1_project/utils/assets_strings.dart';
 import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 
-
-
 class SplashPage extends StatefulWidget {
-  const SplashPage({Key key,  this.title});
-  final String title;
-
   @override
   State<SplashPage> createState() => _SplashPageState();
 }
 
 class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    Timer(
+        Duration(seconds: 5),
+        () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginPage()),
+            ));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +32,21 @@ class _SplashPageState extends State<SplashPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.network(ImageNetworkAssetStrings.LOGO_WHITE_PNG,width: 180,),
-            SizedBox(height: 30,),
-            Text(AppStrings.version,style: TextThemes.whiteMedium,)
-
+           Image.asset(
+              AssetStrings.LOGO_WHITE_PNG,
+              width: 180,
+            ),
+            SizedBox(
+              height: 80,
+            ),
+            Text(
+              AppStrings.version,
+              style: TextThemes.whiteMedium,
+            ),
+            Text(
+              AppStrings.COMPANYNAME,
+              style: TextThemes.whiteSmall,
+            )
           ],
         ),
       ),

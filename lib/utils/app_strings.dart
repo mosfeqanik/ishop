@@ -43,7 +43,8 @@ class AppStrings {
       "Enter a valid email address";
   static const String EMAIL_PASSWORD_RESET = "EMAIL PASSWORD RESET";
 
-  static const String version = "v 1.0.1.0";
+  static const String version = "v 1.0.1";
+  static const String COMPANYNAME = "© ITZone 2021";
 
 
 
