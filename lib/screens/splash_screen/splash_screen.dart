@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:ecommerce1_project/screens/login_page/login_page.dart';
+import 'package:ecommerce1_project/screens/register_page/register_page.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:ecommerce1_project/utils/app_strings.dart';
 import 'package:ecommerce1_project/utils/assets_strings.dart';
@@ -19,7 +19,7 @@ class _SplashPageState extends State<SplashPage> {
         Duration(seconds: 5),
         () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => LoginPage()),
+              MaterialPageRoute(builder: (context) => RegisterPage()),
             ));
     super.initState();
   }

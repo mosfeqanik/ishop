@@ -10,15 +10,16 @@ class AppStrings {
   //LOGIN RELATED
   static const String FORGET_PASSWORD_DETAILS =
       "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.";
-  static const String FORGET_PASSWORD = "Forgot your password?";
+  static const String FORGET_PASSWORD = "Forgot password?";
   static const String ENTER_EMAIL = "Enter Your Email";
   static const String ENTER_YOUR_PASSWORD = "Enter Your Password";
   static const String ENTER_CONFIRM_PASSWORD = "Enter Your Confirm Password";
 
   static const String REGISTER = "Register";
-  static const String LOG_IN = "LOG IN";
+  static const String LOG_IN = "Log In";
   static const String SIGN_IN = "SIGN IN";
-  static const String ALREADY_REGISTERED = "Already registered?";
+  static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an Account?";
+  static const String OR_CREATE_AN_ACCOUNT = "Or Create an Account?";
 
   static const String CONFIRM_PASSWORD = "Confirm Your Password";
 
@@ -29,6 +30,9 @@ class AppStrings {
   static const String PASSWORD = "Password";
   static const String RE_TYPEPASSWORD = "Re-type password";
   static const String OR_REGISTER_WITH_PHONE_NUMBER = "Or Register With Phone Number";
+  static const String SIGN_UP = 'Sign Up';
+
+
 
 
   //Validation Related
@@ -49,6 +53,8 @@ class AppStrings {
   static const String version = "v 1.0.1";
   static const String COMPANYNAME = "© ITZone 2021";
   static const String JOIN_ACTIVE_ECOMMERCE = 'Join Active eCommerce';
+  static const String LOGIN_TO_ACTIVE_ECOMMERCE = 'Login to Active eCommerce';
+
 
   static const String TEXTFIELD_HEADER_NAME = 'Name';
 

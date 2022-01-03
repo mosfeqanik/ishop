@@ -31,9 +31,29 @@ class TextThemes {
   static const TextStyle RedTextsmall = TextStyle(
     fontFamily: "Solway",
     fontSize: 12,
+    fontWeight: FontWeight.w500,
     fontStyle:  FontStyle. italic,
     color: AppColors.kRedColor,
   );
+  static const TextStyle BlueTextsmall = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    fontStyle:  FontStyle. italic,
+    color: AppColors.kSecondaryBlueColor,
+  );
+  static const TextStyle ButtonTextWhite = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 18,
+    color: Colors.white,
+  );
+  static const TextStyle SecondaryTextGrey = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 16,
+    color: AppColors.kSecondaryGreyColor,
+  );
+
+
 
 
   static final Color ndGold = Color.fromRGBO(220, 180, 57, 1.0);

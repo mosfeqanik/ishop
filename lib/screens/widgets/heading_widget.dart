@@ -4,6 +4,9 @@ import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatelessWidget {
+final String title;
+
+HeaderWidget({this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class HeaderWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 10,),
-        Text(AppStrings.JOIN_ACTIVE_ECOMMERCE,style: TextThemes.RedHeading,),
+        Text(title,style: TextThemes.RedHeading,),
         SizedBox(height: 10,),
       ],
     );
