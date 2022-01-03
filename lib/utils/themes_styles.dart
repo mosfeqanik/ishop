@@ -28,6 +28,12 @@ class TextThemes {
     fontWeight: FontWeight.w900,
     color: AppColors.kRedColor,
   );
+  static const TextStyle RedTextsmall = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 12,
+    fontStyle:  FontStyle. italic,
+    color: AppColors.kRedColor,
+  );
 
 
   static final Color ndGold = Color.fromRGBO(220, 180, 57, 1.0);

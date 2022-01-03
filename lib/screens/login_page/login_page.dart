@@ -1,10 +1,9 @@
 import 'package:ecommerce1_project/screens/widgets/heading_widget.dart';
 import 'package:ecommerce1_project/screens/widgets/input_decoration.dart';
-
 import 'package:ecommerce1_project/utils/app_strings.dart';
+import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:ecommerce1_project/utils/validator_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce1_project/utils/themes_styles.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -46,17 +45,30 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Text(AppStrings.EMAIL,style: TextThemes.RedHeadingTextfild,),
+                    padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Text(
+                      AppStrings.EMAIL,
+                      style: TextThemes.RedHeadingTextfild,
+                    ),
                   ),
                   Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: 15.0,vertical: 10),
+                    padding:
+                        EdgeInsets.only(left: 15.0,right: 15.0 ,top: 10),
                     child: TextFormField(
                       autofocus: false,
                       validator: validateEmail,
-                      decoration: buildInputDecoration(hintText: 'johndoe@example.com'),
+                      decoration:
+                          buildInputDecoration(hintText: 'johndoe@example.com'),
                     ),
-                  )
+                  ),
+                  Container(
+                    alignment: Alignment.topRight,
+                    padding: EdgeInsets.symmetric(horizontal: 15.0,vertical: 0),
+                    child: Text(
+                      AppStrings.OR_REGISTER_WITH_PHONE_NUMBER,
+                      style: TextThemes.RedTextsmall,
+                    ),
+                  ),
                 ],
               ),
               Column(

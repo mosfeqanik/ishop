@@ -28,6 +28,7 @@ class AppStrings {
   static const String NAME = "Name";
   static const String PASSWORD = "Password";
   static const String RE_TYPEPASSWORD = "Re-type password";
+  static const String OR_REGISTER_WITH_PHONE_NUMBER = "Or Register With Phone Number";
 
 
   //Validation Related
