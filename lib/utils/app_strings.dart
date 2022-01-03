@@ -26,14 +26,20 @@ class AppStrings {
   static const String ENTER_YOUR_NAME = "Enter Your Name";
   static const String NEW_TO_APP = "New to App?";
   static const String EMAIL = "Email";
+  static const String EMAIL_PHONE = "Email/phone";
+
+  static const String PHONE_NUMBER = "Phone Number";
+
   static const String NAME = "Name";
   static const String PASSWORD = "Password";
   static const String RE_TYPEPASSWORD = "Re-type password";
-  static const String OR_REGISTER_WITH_PHONE_NUMBER = "Or Register With Phone Number";
+  static const String OR_REGISTER_WITH_PHONE_NUMBER =
+      "Or Register With Phone Number";
+  static const String SIGN_UP_WITH_PHONE_NUMBER_DETAILS =
+      "We'll call or text you to confirm your number \nstandard message and data rate's apply";
+  static const String RESET_PASSWORD_PHONE_NUMBER_DETAILS =
+      "We will send you a new password to if we have your account details\n";
   static const String SIGN_UP = 'Sign Up';
-
-
-
 
   //Validation Related
   static const String PLEASE_ENTER_YOUR_EMAIL = "Please Enter Your Email";
@@ -54,6 +60,7 @@ class AppStrings {
   static const String COMPANYNAME = "© ITZone 2021";
   static const String JOIN_ACTIVE_ECOMMERCE = 'Join Active eCommerce';
   static const String LOGIN_TO_ACTIVE_ECOMMERCE = 'Login to Active eCommerce';
+  static const String RESET_PASSWORD = 'Reset Password';
 
 
   static const String TEXTFIELD_HEADER_NAME = 'Name';
