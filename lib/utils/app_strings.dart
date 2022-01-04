@@ -20,6 +20,8 @@ class AppStrings {
   static const String SIGN_IN = "SIGN IN";
   static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an Account?";
   static const String OR_CREATE_AN_ACCOUNT = "Or Create an Account?";
+  static const String VERIFY_YOUR_PHONE_NUMBER = "Verify Your Number";
+  static const String CONFIRM = "Confirm";
 
   static const String CONFIRM_PASSWORD = "Confirm Your Password";
 
@@ -32,6 +34,7 @@ class AppStrings {
 
   static const String NAME = "Name";
   static const String PASSWORD = "Password";
+  static const String RESET = "Reset Password";
   static const String RE_TYPEPASSWORD = "Re-type password";
   static const String OR_REGISTER_WITH_PHONE_NUMBER =
       "Or Register With Phone Number";
@@ -39,7 +42,13 @@ class AppStrings {
       "We'll call or text you to confirm your number \nstandard message and data rate's apply";
   static const String RESET_PASSWORD_PHONE_NUMBER_DETAILS =
       "We will send you a new password to if we have your account details\n";
+  static const String VERIFICATION_MESSAGE_DETAILS =
+      "Enter the verification number that send your to you phone recently  ";
   static const String SIGN_UP = 'Sign Up';
+
+
+  static const String reset_time = 'Reset (00.39)';
+
 
   //Validation Related
   static const String PLEASE_ENTER_YOUR_EMAIL = "Please Enter Your Email";

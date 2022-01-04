@@ -8,6 +8,7 @@ import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:ecommerce1_project/utils/validator_functions.dart';
 import 'package:flutter/material.dart';
 
+
 class ResetPasswordPage extends StatefulWidget {
   @override
   _ResetPasswordPageState createState() => _ResetPasswordPageState();
@@ -59,7 +60,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 ButtonWidget(
                   ButtonColor: AppColors.kRedColor,
                   ButtonFunction: () {},
-                  ButtonText: AppStrings.LOG_IN,
+                  ButtonText: AppStrings.RESET,
                 ),
 
                 SizedBox(
