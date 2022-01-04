@@ -35,12 +35,31 @@ class TextThemes {
     fontStyle:  FontStyle. italic,
     color: AppColors.kRedColor,
   );
+  static const TextStyle RedTextMedium = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: AppColors.kRedColor,
+  );
   static const TextStyle BlueTextsmall = TextStyle(
     fontFamily: "Solway",
     fontSize: 12,
     fontWeight: FontWeight.w500,
     fontStyle:  FontStyle. italic,
     color: AppColors.kSecondaryBlueColor,
+  );
+  static const TextStyle BlackTextMedium = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.kTenBlackColor,
+  );
+  static const TextStyle GreyTextSmall = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 12,
+    decoration: TextDecoration.underline,
+    fontWeight: FontWeight.w600,
+    color: AppColors.kSecondaryGreyColor,
   );
   static const TextStyle ButtonTextWhite = TextStyle(
     fontFamily: "Solway",
