@@ -3,7 +3,6 @@ import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 
-
 class CategoryPage extends StatefulWidget {
   @override
   _CategoryPageState createState() => _CategoryPageState();
@@ -63,14 +62,16 @@ class _CategoryPageState extends State<CategoryPage> {
                 width: 100,
                 fit: BoxFit.cover,
               ),
-              isThreeLine: true,
               title: Text(
                 Categories[index].name,
                 style: TextThemes.BlackTextMedium,
               ),
-              subtitle: Text(
-                ' View Sub-Categories|View Products',
-                style: TextThemes.GreyTextSmall,
+              subtitle: Padding(
+                padding:  EdgeInsets.only(top: 15.0,left: 10),
+                child: Text(
+                  ' View Sub-Categories|View Products',
+                  style: TextThemes.GreyTextSmall,
+                ),
               ),
             ),
           );
