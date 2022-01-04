@@ -1,5 +1,6 @@
 import 'package:ecommerce1_project/modals/category_list.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
+import 'package:ecommerce1_project/utils/my_drawer.dart';
 import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ class _CategoryPageState extends State<CategoryPage> {
         centerTitle: true,
         iconTheme: IconThemeData(color: AppColors.kgreyColor),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawerPart(),
       body: ListView.builder(
         itemCount: Categories.length,
         itemBuilder: (context, index) {
@@ -70,7 +71,7 @@ class _CategoryPageState extends State<CategoryPage> {
                 padding:  EdgeInsets.only(top: 15.0,left: 10),
                 child: Text(
                   ' View Sub-Categories|View Products',
-                  style: TextThemes.GreyTextSmall,
+                  style: TextThemes.GreyTextSmallUnderline,
                 ),
               ),
             ),
