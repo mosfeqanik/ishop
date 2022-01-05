@@ -82,6 +82,11 @@ class TextThemes {
     fontSize: 13,
     color: AppColors.kSecondaryGreyColor,
   );
+  static const TextStyle SecondaryTextCategoryListGrey = TextStyle(
+    fontFamily: "Solway",
+    fontSize: 11,
+    color: AppColors.kSecondaryGreyColor,
+  );
   static const TextStyle DrawerlistItemTextGrey = TextStyle(
     fontFamily: "Solway",
     fontSize: 16,

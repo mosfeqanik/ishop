@@ -34,6 +34,7 @@ class _CategoryPageState extends State<CategoryPage> {
           imageUrl:
               'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/sofa.png?alt=media&token=1bf3eb98-350b-4623-a175-bea640cedc4a'),
     ];
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
