@@ -8,6 +8,8 @@ import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'components/heading_homepage.dart';
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -77,6 +79,8 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 10),
@@ -140,59 +144,67 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              AspectRatio(
-                aspectRatio: 11 / 5,
-                child: CarouselSlider(
-                  items: _carouselImages
-                      .map(
-                        (item) => Padding(
-                          padding: EdgeInsets.all(8),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                image: NetworkImage(item),
-                                fit: BoxFit.cover,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: AspectRatio(
+                  aspectRatio: 11 / 5,
+                  child: CarouselSlider(
+                    items: _carouselImages
+                        .map(
+                          (item) => Padding(
+                            padding: EdgeInsets.all(8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  image: NetworkImage(item),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      )
-                      .toList(),
-                  options: CarouselOptions(
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      autoPlay: true,
-                      enlargeCenterPage: true,
-                      viewportFraction: 1,
-                      enlargeStrategy: CenterPageEnlargeStrategy.scale,
-                      onPageChanged: (val, carouselPageChangedReason) {
-                        setState(() {
-                          _dotPosition = val;
-                        });
-                      }),
+                        )
+                        .toList(),
+                    options: CarouselOptions(
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        autoPlay: true,
+                        enlargeCenterPage: true,
+                        viewportFraction: 1,
+                        enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                        onPageChanged: (val, carouselPageChangedReason) {
+                          setState(() {
+                            _dotPosition = val;
+                          });
+                        }),
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              DotsIndicator(
-                dotsCount:
-                    _carouselImages.length == 0 ? 1 : _carouselImages.length,
-                position: _dotPosition.toDouble(),
-                decorator: DotsDecorator(
-                  activeColor: AppColors.kwhiteColor,
-                  color: AppColors.kLightgreyColor.withOpacity(.5),
-                  spacing: EdgeInsets.all(2),
-                  activeSize: Size(8, 8),
-                  size: Size(6, 6),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Center(
+                  child: DotsIndicator(
+                    dotsCount:
+                        _carouselImages.length == 0 ? 1 : _carouselImages.length,
+                    position: _dotPosition.toDouble(),
+                    decorator: DotsDecorator(
+                      activeColor: AppColors.kwhiteColor,
+                      color: AppColors.kLightgreyColor.withOpacity(.5),
+                      spacing: EdgeInsets.all(2),
+                      activeSize: Size(8, 8),
+                      size: Size(6, 6),
+                    ),
+                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
                 padding: EdgeInsets.only(left: 7),
-                height: 150,
+                height: 100,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: Brands.length,
@@ -203,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(12.0),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
@@ -228,7 +240,8 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
                 ),
-              )
+              ),
+              HeadingText(TittleText: 'Featured Categories',)
             ],
           ),
         ),
@@ -236,16 +249,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget buildCard() {
-    Container(
-      width: 200,
-      height: 200,
-      child: Column(
-        children: [
-          SvgPicture.network(
-              'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fscan-barcode.svg?alt=media&token=e163c96b-0c35-4a65-8c3a-d9380866d7b6')
-        ],
-      ),
-    );
-  }
 }
