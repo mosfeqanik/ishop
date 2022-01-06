@@ -1,8 +1,8 @@
 import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
-import 'img_network_assets_strings.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/img_network_assets_strings.dart';
 
 class MyDrawerPart extends StatelessWidget {
 

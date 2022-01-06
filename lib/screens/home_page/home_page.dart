@@ -2,24 +2,17 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce1_project/modals/brand_list.dart';
 import 'package:ecommerce1_project/modals/category_list.dart';
 import 'package:ecommerce1_project/modals/products_list.dart';
+import 'package:ecommerce1_project/screens/components/box_decoration.dart';
+import 'package:ecommerce1_project/screens/search_page/search_page.dart';
 import 'package:ecommerce1_project/screens/widgets/badge.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
-import 'package:ecommerce1_project/utils/my_drawer.dart';
+import 'package:ecommerce1_project/screens/components/my_drawer.dart';
 import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'components/heading_homepage.dart';
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
-    home: const HomePage(),
-  ));
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
@@ -172,7 +165,12 @@ class _HomePageState extends State<HomePage> {
                                   color: AppColors.kSecondaryGreyColor,
                                   size: 20,
                                 )),
-                            onTap: () {}),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => SearchPage()),
+                              );
+                            }),
                       ),
                     ),
                     Badge(
@@ -276,11 +274,7 @@ class _HomePageState extends State<HomePage> {
                     return Container(
                       margin: const EdgeInsets.symmetric(horizontal: 5),
                       height: 140,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        border: Border.all(
-                            color: AppColors.kLightgreyColor, width: 1.0),
-                      ),
+                      decoration: buildBoxDecoration(),
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         child: Column(
@@ -322,11 +316,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         padding: const EdgeInsets.only(left: 10.0, right: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(Radius.circular(20)),
-                          border: Border.all(
-                              color: AppColors.kLightgreyColor, width: 1.0),
-                        ),
+                        decoration: buildBoxDecoration(),
                         child: Image.network(
                           Products[index].imageUrl,
                           height: 120,
@@ -342,5 +332,7 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+
 
 }

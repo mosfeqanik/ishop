@@ -1,6 +1,6 @@
 import 'package:ecommerce1_project/modals/category_list.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
-import 'package:ecommerce1_project/utils/my_drawer.dart';
+import 'package:ecommerce1_project/screens/components/my_drawer.dart';
 import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 
