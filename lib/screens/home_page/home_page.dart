@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:ecommerce1_project/modals/brand_list.dart';
+import 'package:ecommerce1_project/modals/category_list.dart';
 import 'package:ecommerce1_project/screens/widgets/badge.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:ecommerce1_project/utils/my_drawer.dart';
@@ -16,11 +16,13 @@ void main() {
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
-    home: HomePage(),
+    home: const HomePage(),
   ));
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -54,7 +56,7 @@ class _HomePageState extends State<HomePage> {
       name: 'Today Deals',
       imageColor: Colors.orange,
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fring-diamond.svg?alt=media&token=9d4108ec-c536-463d-a161-fc4d4c4c8c77',
+          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fdirect.svg?alt=media&token=55fdd428-5ff1-4ced-a265-0d9c4b674e43',
     ),
     Brand(
       name: 'Flash Sells',
@@ -69,7 +71,28 @@ class _HomePageState extends State<HomePage> {
           'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fchair.svg?alt=media&token=4108614e-8e29-479c-8ef5-0b452ea05aa1',
     ),
   ];
-  var _dotPosition = 0;
+  List<Category> Categories = [
+    Category(
+        name: 'Automobile & MotorCycle',
+        imageUrl:
+            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/automobile.png?alt=media&token=609939ba-83a1-4bae-bd02-842d180fa8a3'),
+    Category(
+        name: 'Beauty,Health & Hair',
+        imageUrl:
+            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/cosmetic.png?alt=media&token=4b24e829-529a-462b-a838-09ac7cbd6bdf'),
+    Category(
+        name: 'CellPhone & Tabs',
+        imageUrl:
+            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/15.png?alt=media&token=3b32295d-3855-47f6-ace9-3fbbe33ccbb6'),
+    Category(
+        name: 'Laptop & Accessories',
+        imageUrl:
+            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/mac.png?alt=media&token=de4f60cc-6a9c-401f-851a-bf1196365919'),
+    Category(
+        name: 'Furniture',
+        imageUrl:
+            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/sofa.png?alt=media&token=1bf3eb98-350b-4623-a175-bea640cedc4a'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +106,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -99,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Expanded(
                       child: SizedBox(
-                        height: 55,
+                        height: 50,
                         child: TextFormField(
                             readOnly: true,
                             decoration: const InputDecoration(
@@ -144,78 +167,51 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: AspectRatio(
-                  aspectRatio: 11 / 5,
-                  child: CarouselSlider(
-                    items: _carouselImages
-                        .map(
-                          (item) => Padding(
-                            padding: EdgeInsets.all(8),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: NetworkImage(item),
-                                  fit: BoxFit.cover,
-                                ),
+              AspectRatio(
+                aspectRatio: 11 / 5,
+                child: CarouselSlider(
+                  items: _carouselImages
+                      .map(
+                        (item) => Padding(
+                          padding: const EdgeInsets.only(left: 8,right: 8),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: NetworkImage(item),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        )
-                        .toList(),
-                    options: CarouselOptions(
-                        autoPlayCurve: Curves.fastOutSlowIn,
-                        autoPlay: true,
-                        enlargeCenterPage: true,
-                        viewportFraction: 1,
-                        enlargeStrategy: CenterPageEnlargeStrategy.scale,
-                        onPageChanged: (val, carouselPageChangedReason) {
-                          setState(() {
-                            _dotPosition = val;
-                          });
-                        }),
+                        ),
+                      )
+                      .toList(),
+                  options: CarouselOptions(
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    viewportFraction: 1,
+                    enlargeStrategy: CenterPageEnlargeStrategy.scale,
                   ),
                 ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Center(
-                  child: DotsIndicator(
-                    dotsCount:
-                        _carouselImages.length == 0 ? 1 : _carouselImages.length,
-                    position: _dotPosition.toDouble(),
-                    decorator: DotsDecorator(
-                      activeColor: AppColors.kwhiteColor,
-                      color: AppColors.kLightgreyColor.withOpacity(.5),
-                      spacing: EdgeInsets.all(2),
-                      activeSize: Size(8, 8),
-                      size: Size(6, 6),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
               Container(
-                padding: EdgeInsets.only(left: 7),
-                height: 100,
+                padding: const EdgeInsets.only(left: 7),
+                height: 95,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: Brands.length,
                   itemBuilder: (context, index) {
                     return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
                       height: 125,
                       child: Column(
                         children: [
                           Container(
-                            padding: EdgeInsets.all(12.0),
+                            padding: const EdgeInsets.all(12.0),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               border: Border.all(
@@ -228,7 +224,7 @@ class _HomePageState extends State<HomePage> {
                               color: Brands[index].imageColor,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 8,
                           ),
                           Text(
@@ -241,7 +237,56 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              HeadingText(TittleText: 'Featured Categories',)
+              HeadingText(
+                TittleText: 'Featured Categories',
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Container(
+                padding: const EdgeInsets.only(left: 7),
+                height: 145,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: Categories.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 5),
+                      height: 140,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.all(Radius.circular(20)),
+                        border: Border.all(
+                            color: AppColors.kLightgreyColor, width: 1.0),
+                      ),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(left: 10.0, right: 10),
+                              child: Expanded(
+                                child: Image.network(
+                                  Categories[index].imageUrl,
+                                  height: 120,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              Categories[index].name,
+                              style: TextThemes.SecondaryTextCategoryListsGrey,
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(height: 5,),
+              HeadingText(
+                TittleText: 'Featured Products',
+              ),
+
             ],
           ),
         ),
