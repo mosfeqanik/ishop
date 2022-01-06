@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce1_project/modals/brand_list.dart';
 import 'package:ecommerce1_project/modals/category_list.dart';
+import 'package:ecommerce1_project/modals/products_list.dart';
 import 'package:ecommerce1_project/screens/widgets/badge.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:ecommerce1_project/utils/my_drawer.dart';
@@ -70,6 +71,28 @@ class _HomePageState extends State<HomePage> {
       imageUrl:
           'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fchair.svg?alt=media&token=4108614e-8e29-479c-8ef5-0b452ea05aa1',
     ),
+  ];
+  List<Product> Products = [
+    Product(
+      imageUrl:
+          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F11.png?alt=media&token=250bbdf2-b064-4e50-82cd-15f382740d74',
+    ),
+    Product(
+      imageUrl:
+      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F18.png?alt=media&token=81c8ab95-e998-45ae-b049-bcc04ee82552',
+    ),
+    Product(
+      imageUrl:
+      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F23.png?alt=media&token=de4ee408-3f96-4e71-98ed-727b267e4c41',
+    ),
+    Product(
+      imageUrl:
+      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F42.png?alt=media&token=f2849420-2dda-43d4-a0c6-cbb213a69312',
+    ),
+    Product(
+      imageUrl:
+      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F40.png?alt=media&token=9c945693-b275-46c0-bd0f-0eb387dffa82',
+    )
   ];
   List<Category> Categories = [
     Category(
@@ -263,12 +286,11 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           children: [
                             Container(
-                              padding: const EdgeInsets.only(left: 10.0, right: 10),
-                              child: Expanded(
-                                child: Image.network(
-                                  Categories[index].imageUrl,
-                                  height: 120,
-                                ),
+                              padding:
+                                  const EdgeInsets.only(left: 10.0, right: 10),
+                              child: Image.network(
+                                Categories[index].imageUrl,
+                                height: 120,
                               ),
                             ),
                             Text(
@@ -282,11 +304,38 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              const SizedBox(height: 5,),
+              const SizedBox(
+                height: 5,
+              ),
               HeadingText(
                 TittleText: 'Featured Products',
               ),
-
+              Container(
+                height: 200,
+                child: GridView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: Products.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 10.0, right: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: const BorderRadius.all(Radius.circular(20)),
+                          border: Border.all(
+                              color: AppColors.kLightgreyColor, width: 1.0),
+                        ),
+                        child: Image.network(
+                          Products[index].imageUrl,
+                          height: 120,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),
