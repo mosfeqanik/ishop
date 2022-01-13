@@ -9,6 +9,7 @@ import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:ecommerce1_project/screens/components/my_drawer.dart';
 import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'components/heading_homepage.dart';
@@ -117,217 +118,228 @@ class _HomePageState extends State<HomePage> {
       drawer: MyDrawerPart(),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        _scaffoldKey.currentState.openDrawer();
-                      },
-                      icon: const Icon(
-                        Icons.menu_rounded,
-                        color: AppColors.kSecondaryGreyColor,
-                        size: 25,
+          child: Container(
+            margin: EdgeInsets.all(8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          _scaffoldKey.currentState.openDrawer();
+                        },
+                        icon: const Icon(
+                          Icons.menu_rounded,
+                          color: AppColors.kSecondaryGreyColor,
+                          size: 25,
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: SizedBox(
-                        height: 50,
-                        child: TextFormField(
-                            readOnly: true,
-                            decoration: const InputDecoration(
-                                fillColor: Colors.white,
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(18)),
-                                  borderSide: BorderSide(color: Colors.blue),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(18)),
-                                  borderSide: BorderSide(
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: TextFormField(
+                              readOnly: true,
+                              decoration: const InputDecoration(
+                                  fillColor: Colors.white,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(18)),
+                                    borderSide: BorderSide(color: Colors.blue),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius:
+                                    BorderRadius.all(Radius.circular(18)),
+                                    borderSide: BorderSide(
+                                      color: AppColors.kSecondaryGreyColor,
+                                    ),
+                                  ),
+                                  hintText: "Search",
+                                  hintStyle: TextStyle(
+                                    fontSize: 15,
                                     color: AppColors.kSecondaryGreyColor,
                                   ),
-                                ),
-                                hintText: "Search",
-                                hintStyle: TextStyle(
-                                  fontSize: 15,
-                                  color: AppColors.kSecondaryGreyColor,
-                                ),
-                                prefixIcon: Icon(
-                                  Icons.search_outlined,
-                                  color: AppColors.kSecondaryGreyColor,
-                                  size: 20,
-                                )),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => SearchPage()),
-                              );
-                            }),
-                      ),
-                    ),
-                    Badge(
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.notifications_outlined,
-                          color: AppColors.kSecondaryGreyColor,
-                          size: 30,
+                                  prefixIcon: Icon(
+                                    Icons.search_outlined,
+                                    color: AppColors.kSecondaryGreyColor,
+                                    size: 20,
+                                  )),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => SearchPage()),
+                                );
+                              }),
                         ),
                       ),
-                      value: '1',
-                      color: AppColors.kRedColor,
-                    ),
-                  ],
-                ),
-              ),
-              AspectRatio(
-                aspectRatio: 11 / 5,
-                child: CarouselSlider(
-                  items: _carouselImages
-                      .map(
-                        (item) => Padding(
-                          padding: const EdgeInsets.only(left: 8,right: 8),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                image: NetworkImage(item),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                      Badge(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.notifications_outlined,
+                            color: AppColors.kSecondaryGreyColor,
+                            size: 30,
                           ),
                         ),
-                      )
-                      .toList(),
-                  options: CarouselOptions(
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                    autoPlay: true,
-                    enlargeCenterPage: true,
-                    viewportFraction: 1,
-                    enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                        value: '1',
+                        color: AppColors.kRedColor,
+                      ),
+                    ],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 7),
-                height: 95,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: Brands.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 5),
-                      height: 125,
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(12.0),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                  color: AppColors.kLightgreyColor, width: 1.0),
-                            ),
-                            child: SvgPicture.network(
-                              Brands[index].imageUrl,
-                              height: 40,
-                              width: 40,
-                              color: Brands[index].imageColor,
+                AspectRatio(
+                  aspectRatio: 11 / 5,
+                  child: CarouselSlider(
+                    items: _carouselImages
+                        .map(
+                          (item) => Padding(
+                        padding: const EdgeInsets.only(left: 8,right: 8),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: NetworkImage(item),
+                              fit: BoxFit.cover,
                             ),
                           ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            Brands[index].name,
-                            style: TextThemes.SecondaryTextCategoryListGrey,
-                          )
-                        ],
+                        ),
                       ),
-                    );
-                  },
+                    )
+                        .toList(),
+                    options: CarouselOptions(
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      viewportFraction: 1,
+                      enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                    ),
+                  ),
                 ),
-              ),
-              HeadingText(
-                TittleText: 'Featured Categories',
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 7),
-                height: 145,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: Categories.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 5),
-                      height: 140,
-                      decoration: buildBoxDecoration(),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                const SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 7),
+                  height: 95,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: Brands.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        height: 125,
                         child: Column(
                           children: [
                             Container(
-                              padding:
-                                  const EdgeInsets.only(left: 10.0, right: 10),
-                              child: Image.network(
-                                Categories[index].imageUrl,
-                                height: 120,
+                              padding: const EdgeInsets.all(12.0),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                    color: AppColors.kLightgreyColor, width: 1.0),
+                              ),
+                              child: SvgPicture.network(
+                                Brands[index].imageUrl,
+                                height: 40,
+                                width: 40,
+                                color: Brands[index].imageColor,
                               ),
                             ),
+                            const SizedBox(
+                              height: 8,
+                            ),
                             Text(
-                              Categories[index].name,
-                              style: TextThemes.SecondaryTextCategoryListsGrey,
+                              Brands[index].name,
+                              style: TextThemes.SecondaryTextCategoryListGrey,
                             )
                           ],
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              HeadingText(
-                TittleText: 'Featured Products',
-              ),
-              Container(
-                height: 200,
-                child: GridView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: Products.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10),
+                HeadingText(
+                  TittleText: 'Featured Categories',
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 7),
+                  height: 145,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: Categories.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        height: 140,
                         decoration: buildBoxDecoration(),
-                        child: Image.network(
-                          Products[index].imageUrl,
-                          height: 120,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Column(
+                            children: [
+                              Container(
+                                padding:
+                                const EdgeInsets.only(left: 10.0, right: 10),
+                                child: Image.network(
+                                  Categories[index].imageUrl,
+                                  height: 120,
+                                ),
+                              ),
+                              Text(
+                                Categories[index].name,
+                                style: TextThemes.SecondaryTextCategoryListsGrey,
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
-              )
-            ],
+                const SizedBox(
+                  height: 5,
+                ),
+                HeadingText(
+                  TittleText: 'Featured Products',
+                ),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    minHeight: 80, // Set as you want or you can remove it also.
+                    maxHeight: double.infinity,
+                  ),
+                  child: Container(
+                    child: GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap : true,
+                      scrollDirection: Axis.vertical,
+                      itemCount: Products.length,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2),
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            padding: const EdgeInsets.only(left: 10.0, right: 10),
+                            decoration: buildBoxDecoration(),
+                            child: Image.network(
+                              Products[index].imageUrl,
+                              height: 120,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
+
         ),
       ),
     );
