@@ -1,5 +1,5 @@
 class Product {
-  final String imageUrl;
+  final String? imageUrl;
 
   Product({ this.imageUrl});
 

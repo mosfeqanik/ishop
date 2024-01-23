@@ -3,11 +3,9 @@ import 'package:ecommerce1_project/utils/themes_styles.dart';
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
-
-  final String ButtonText;
-  final Function ButtonFunction;
-  final Color ButtonColor;
-
+  final String? ButtonText;
+  final Function? ButtonFunction;
+  final Color? ButtonColor;
 
   ButtonWidget({this.ButtonText, this.ButtonFunction, this.ButtonColor});
 
@@ -17,10 +15,10 @@ class ButtonWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15.0),
       child: ElevatedButton(
         child: Text(
-          ButtonText,
+          ButtonText!,
           style: TextThemes.ButtonTextWhite,
         ),
-        onPressed: ButtonFunction,
+        onPressed: (){},
         style: ElevatedButton.styleFrom(
             primary: ButtonColor,
             shape: RoundedRectangleBorder(

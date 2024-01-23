@@ -6,7 +6,7 @@ void main() {
 }
 
 class ProjectIshop extends StatelessWidget {
-  const ProjectIshop({Key key}) : super(key: key);
+  const ProjectIshop({ Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override

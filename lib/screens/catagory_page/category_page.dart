@@ -59,13 +59,13 @@ class _CategoryPageState extends State<CategoryPage> {
             child: ListTile(
               contentPadding: EdgeInsets.only(top: 10, bottom: 10),
               leading: Image.network(
-                Categories[index].imageUrl,
+                Categories[index].imageUrl!,
                 height: 120,
                 width: 100,
                 fit: BoxFit.cover,
               ),
               title: Text(
-                Categories[index].name,
+                Categories[index].name!,
                 style: TextThemes.BlackTextMedium,
               ),
               subtitle: Padding(

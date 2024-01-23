@@ -4,7 +4,6 @@ import 'package:ecommerce1_project/modals/category_list.dart';
 import 'package:ecommerce1_project/modals/products_list.dart';
 import 'package:ecommerce1_project/screens/components/box_decoration.dart';
 import 'package:ecommerce1_project/screens/search_page/search_page.dart';
-import 'package:ecommerce1_project/screens/widgets/badge.dart';
 import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:ecommerce1_project/screens/components/my_drawer.dart';
 import 'package:ecommerce1_project/utils/themes_styles.dart';
@@ -16,7 +15,7 @@ import 'components/heading_homepage.dart';
 
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -33,82 +32,86 @@ class _HomePageState extends State<HomePage> {
       name: 'Top Categories',
       imageColor: Colors.red,
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fscan-barcode.svg?alt=media&token=e163c96b-0c35-4a65-8c3a-d9380866d7b6',
+          'https://www.svgrepo.com/show/501815/open-open-a-file.svg',
     ),
     Brand(
       name: 'Brands',
       imageColor: Colors.green,
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Flight.svg?alt=media&token=1fbce735-119a-4b23-9b48-33ad2435a4b9',
+          'https://www.svgrepo.com/show/501816/play-game.svg',
     ),
     Brand(
       name: 'Top Sellers',
       imageColor: Colors.yellowAccent,
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fknight.svg?alt=media&token=d760f64b-077d-4ac8-a234-58d26ad29a4e',
+          'https://www.svgrepo.com/show/501814/microphone1-broadcasting.svg',
     ),
     Brand(
       name: 'Today Deals',
       imageColor: Colors.orange,
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fdirect.svg?alt=media&token=55fdd428-5ff1-4ced-a265-0d9c4b674e43',
+          'https://www.svgrepo.com/show/501829/star.svg',
     ),
     Brand(
       name: 'Flash Sells',
       imageColor: Colors.lightBlue,
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fflash.svg?alt=media&token=58b44cc6-d0f8-43bf-bfdb-7544547eb8ac',
+          'https://www.svgrepo.com/show/530258/medal.svg',
     ),
     Brand(
       name: 'Recent ',
       imageColor: Colors.teal,
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/icon_svg%2Fchair.svg?alt=media&token=4108614e-8e29-479c-8ef5-0b452ea05aa1',
+          'https://www.svgrepo.com/show/501842/medal.svg',
     ),
   ];
   List<Product> Products = [
     Product(
       imageUrl:
-          'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F11.png?alt=media&token=250bbdf2-b064-4e50-82cd-15f382740d74',
+          'https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg',
     ),
     Product(
       imageUrl:
-      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F18.png?alt=media&token=81c8ab95-e998-45ae-b049-bcc04ee82552',
+      'https://img.freepik.com/free-photo/young-female-smiling_1187-4947.jpg',
     ),
     Product(
       imageUrl:
-      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F23.png?alt=media&token=de4ee408-3f96-4e71-98ed-727b267e4c41',
+      'https://img.freepik.com/free-photo/positive-brunet-man-with-crossed-arms_1187-5797.jpg',
     ),
     Product(
       imageUrl:
-      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F42.png?alt=media&token=f2849420-2dda-43d4-a0c6-cbb213a69312',
+      'https://img.freepik.com/free-photo/man-pointing-lateral_1368-1637.jpg',
     ),
     Product(
       imageUrl:
-      'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/products%2F40.png?alt=media&token=9c945693-b275-46c0-bd0f-0eb387dffa82',
+      'https://img.freepik.com/free-photo/adorable-woman-with-toothy-smile-white_1187-5165.jpg',
+    ),
+    Product(
+      imageUrl:
+      'https://img.freepik.com/free-photo/portrait-happy-woman_186202-621.jpg',
     )
   ];
   List<Category> Categories = [
     Category(
-        name: 'Automobile & MotorCycle',
-        imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/automobile.png?alt=media&token=609939ba-83a1-4bae-bd02-842d180fa8a3'),
-    Category(
         name: 'Beauty,Health & Hair',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/cosmetic.png?alt=media&token=4b24e829-529a-462b-a838-09ac7cbd6bdf'),
+            'https://img.freepik.com/free-photo/portrait-beautiful-white-pretty-woman-with-long-straight-hair-pink-rose-face_186202-3682.jpg?w=826&t=st=1706030698~exp=1706031298~hmac=11981d2d68ae0ff5b94f9d43f7457c99740247ea44bf88a989887f5668960b17'),
     Category(
         name: 'CellPhone & Tabs',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/15.png?alt=media&token=3b32295d-3855-47f6-ace9-3fbbe33ccbb6'),
+            'https://img.freepik.com/free-psd/realistic-phone-presentation_1104-139.jpg'),
     Category(
         name: 'Laptop & Accessories',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/mac.png?alt=media&token=de4f60cc-6a9c-401f-851a-bf1196365919'),
+            'https://img.freepik.com/free-photo/laptop-with-white-screen-isolated-white-wall_231208-8590.jpg'),
     Category(
         name: 'Furniture',
         imageUrl:
-            'https://firebasestorage.googleapis.com/v0/b/ecomerce1-7e7cd.appspot.com/o/sofa.png?alt=media&token=1bf3eb98-350b-4623-a175-bea640cedc4a'),
+            'https://img.freepik.com/free-psd/couch-isolated-transparent-background_191095-11201.jpg'),
+    Category(
+        name: 'Automobile & MotorCycle',
+        imageUrl:
+        'https://img.freepik.com/free-photo/headlight-notorcycle_1398-283.jpg'),
   ];
 
   @override
@@ -119,7 +122,7 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          _scaffoldKey.currentState.openDrawer();
+                          _scaffoldKey.currentState?.openDrawer();
                         },
                         icon: const Icon(
                           Icons.menu_rounded,
@@ -177,6 +180,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Badge(
+                        label: Text('1'),
+                        textColor: AppColors.kRedColor,
                         child: IconButton(
                           onPressed: () {},
                           icon: const Icon(
@@ -185,8 +190,6 @@ class _HomePageState extends State<HomePage> {
                             size: 30,
                           ),
                         ),
-                        value: '1',
-                        color: AppColors.kRedColor,
                       ),
                     ],
                   ),
@@ -242,17 +245,16 @@ class _HomePageState extends State<HomePage> {
                                     color: AppColors.kLightgreyColor, width: 1.0),
                               ),
                               child: SvgPicture.network(
-                                Brands[index].imageUrl,
+                                Brands[index].imageUrl!,
                                 height: 40,
                                 width: 40,
-                                color: Brands[index].imageColor,
                               ),
                             ),
                             const SizedBox(
                               height: 8,
                             ),
                             Text(
-                              Brands[index].name,
+                              Brands[index].name!,
                               style: TextThemes.SecondaryTextCategoryListGrey,
                             )
                           ],
@@ -286,12 +288,12 @@ class _HomePageState extends State<HomePage> {
                                 padding:
                                 const EdgeInsets.only(left: 10.0, right: 10),
                                 child: Image.network(
-                                  Categories[index].imageUrl,
+                                  Categories[index].imageUrl!,
                                   height: 120,
                                 ),
                               ),
                               Text(
-                                Categories[index].name,
+                                Categories[index].name!,
                                 style: TextThemes.SecondaryTextCategoryListsGrey,
                               )
                             ],
@@ -312,28 +314,26 @@ class _HomePageState extends State<HomePage> {
                     minHeight: 80, // Set as you want or you can remove it also.
                     maxHeight: double.infinity,
                   ),
-                  child: Container(
-                    child: GridView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap : true,
-                      scrollDirection: Axis.vertical,
-                      itemCount: Products.length,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2),
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                            padding: const EdgeInsets.only(left: 10.0, right: 10),
-                            decoration: buildBoxDecoration(),
-                            child: Image.network(
-                              Products[index].imageUrl,
-                              height: 120,
-                            ),
+                  child: GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap : true,
+                    scrollDirection: Axis.vertical,
+                    itemCount: Products.length,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2),
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10),
+                          decoration: buildBoxDecoration(),
+                          child: Image.network(
+                            Products[index].imageUrl!,
+                            height: 120,
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      );
+                    },
                   ),
                 )
               ],

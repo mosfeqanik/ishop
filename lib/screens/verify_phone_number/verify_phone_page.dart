@@ -57,7 +57,7 @@ class _VerifyPhonePageState extends State<VerifyPhonePage> {
                       child: TextFormField(
                         keyboardType: TextInputType.number,
                         autofocus: false,
-                        decoration: buildInputDecoration(),
+                        decoration: buildInputDecoration(hintText: ''),
                       ),
                     ),
                     SizedBox(

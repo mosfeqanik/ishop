@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                           left: 15.0, right: 15.0, top: 10),
                       child: TextFormField(
                         autofocus: false,
-                        validator: validateEmail,
+                        // validator: validateEmail,
                         decoration: buildInputDecoration(
                             hintText: 'johndoe@example.com'),
                       ),

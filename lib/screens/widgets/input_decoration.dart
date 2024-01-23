@@ -1,7 +1,7 @@
 import 'package:ecommerce1_project/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-InputDecoration buildInputDecoration({String hintText}) {
+InputDecoration buildInputDecoration({required String hintText}) {
   return InputDecoration(
     hintText: hintText,
     contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),

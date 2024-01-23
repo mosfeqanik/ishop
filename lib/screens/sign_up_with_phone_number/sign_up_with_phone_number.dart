@@ -42,7 +42,7 @@ class _SignUpWithPhoneNumberState extends State<SignUpWithPhoneNumber> {
                         const EdgeInsets.only(left: 15.0, right: 15.0, top: 10),
                     child: TextFormField(
                       autofocus: false,
-                      validator: validateEmail,
+                      // validator: validateEmail,
                       decoration:
                           buildInputDecoration(hintText: 'johndoe@example.com'),
                     ),

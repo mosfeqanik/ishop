@@ -65,7 +65,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           const EdgeInsets.only(left: 15.0, right: 15.0, top: 10),
                       child: TextFormField(
                         autofocus: false,
-                        validator: validateEmail,
+                        // validator: validateEmail,
                         decoration:
                             buildInputDecoration(hintText: 'johndoe@example.com'),
                       ),
@@ -117,7 +117,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
                       child: TextFormField(
                         autofocus: false,
-                        validator: validateEmail,
+                        // validator: validateEmail,
                         decoration: buildInputDecoration(
                             hintText: 'Enter Password Again'),
                       ),

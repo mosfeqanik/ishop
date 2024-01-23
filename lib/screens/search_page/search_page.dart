@@ -146,14 +146,14 @@ class _SearchPageState extends State<SearchPage> {
                       child: Column(
                         children: [
                            Image.network(
-                            Companies[index].imageUrl,
+                            Companies[index].imageUrl!,
                             height: 90,
                           ),
                           const SizedBox(
                             height: 15,
                           ),
                           Text(
-                            Companies[index].name,
+                            Companies[index].name!,
                             style: TextThemes.TextCategoryGridGrey,
                           )
                         ],
